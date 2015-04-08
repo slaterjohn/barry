@@ -1,0 +1,32 @@
+{
+  "name": "Barry",
+  "version": "1.0.0",
+  "description": "Really simple HTML, CSS and JS framework",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slaterjohn/barry.git"
+  },
+  "author": "John Slater",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/slaterjohn/barry/issues"
+  },
+  "homepage": "https://github.com/slaterjohn/barry",
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-minify-css": "^1.0.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^1.0.1",
+    "gulp-sass": "^1.3.3"
+  }
+}
