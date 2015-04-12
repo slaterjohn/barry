@@ -1,0 +1,22 @@
+	
+	//
+	//	# utilities.clearfix.scss
+	//
+	//	Fixes the most common issue casued by floating elements.
+	//
+	
+
+
+
+
+	/*
+	 *	## Clearfix
+	 *
+	 *	Fixes the floating issue on containers with floating children.	
+	 *
+	 */
+
+	.u-cf {*zoom:1;
+		&:before, &:after {content:""; display:table;}
+		&:after {clear:both;}
+	}

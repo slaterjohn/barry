@@ -1,0 +1,105 @@
+	
+	//
+	//	# _elements.nav-menu.scss
+	//
+	//	A navigation element that run vertically down the side of a page.
+	//
+
+	$bz-nav-menu-bgc: #ECF0F1 !default;
+	$bz-nav-menu-border-color: darken($bz-nav-menu-bgc, 10) !default;
+	
+
+
+
+	/*
+	 *	## Nav Menu Container
+	 *
+	 *	Spans all elements of the nav menu.
+	 *
+	 *	1.	
+	 *
+	 */
+
+	.#{$bz-prefix}nav-menu {
+		background: $bz-nav-menu-bgc;
+		border: solid 1px $bz-nav-menu-border-color;
+		border-radius: 4px;
+	}
+
+
+
+
+	/*
+	 *	## Nav Menu Header
+	 *
+	 *	{description}
+	 *
+	 *	1.	
+	 *
+	 */
+
+	.#{$bz-prefix}nav-menu__title {
+		border-bottom: solid 1px $bz-nav-menu-border-color;
+		@include padding(
+			$bz-spacing-unit--small,
+			$bz-spacing-unit,
+			$bz-spacing-unit--small,
+			$bz-spacing-unit
+		);
+	}
+
+
+
+
+	/*
+	 *	## Nav Menu Links
+	 *
+	 *	{description}
+	 *
+	 *	1.	
+	 *
+	 */
+
+	.#{$bz-prefix}nav-menu__links {
+		@extend .u-ul-reset;
+
+		& > li {
+			border-bottom: solid 1px $bz-nav-menu-border-color;
+
+			&:last-child {border-bottom: 0;}
+		}
+	}
+
+
+
+
+	/*
+	 *	## Nav Menu Link
+	 *
+	 *	{description}
+	 *
+	 *	1.	
+	 *
+	 */
+
+	.#{$bz-prefix}nav-menu__links a,
+	.#{$bz-prefix}nav-menu__link {
+		display: block;
+		@include padding(
+			$bz-spacing-unit--small,
+			$bz-spacing-unit,
+			$bz-spacing-unit--small,
+			$bz-spacing-unit
+		);
+	}
+
+
+
+
+	/*
+	 *
+	 *	# Modifers
+	 *
+	 */
+
+

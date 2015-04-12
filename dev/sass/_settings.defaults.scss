@@ -1,0 +1,53 @@
+
+	//
+	//	# _settings.defaults.scss
+	//
+	//	Default colors and variables are stored here.
+	//
+	//	********
+	//	Notice: This file shouldn't be modified. Instead use the `_settings.user-defaults.scss` for that.
+	//	********
+	//
+
+
+	// Class Prefix
+	$bz-prefix: "baz-" !default;
+
+
+
+
+	//
+	//	## Colors
+	//
+	//	Define default colors to be used througout the framework.
+	//
+
+	$bz-body-bgc: #fff !default;
+	$bz-on-dark-color: #fff !default;
+	$bz-on-light-color: #111 !default;
+
+
+
+
+	//
+	//	## Text
+	//
+	//	Define the default text size unit. All other sizes are based on this.
+	//
+	$bz-font-stack: 'Arial', 'san-serif' !default;
+	$bz-font-size: 16px !default;
+	$bz-text-color: #111 !default;
+
+
+
+
+	//
+	//	## Spacing Units
+	//
+	//	Define the default units for spacing.
+	//
+	$bz-spacing-unit: 15px;
+	$bz-spacing-unit--tiny: round($bz-spacing-unit / 4);
+	$bz-spacing-unit--small: round($bz-spacing-unit / 2);
+	$bz-spacing-unit--large: round($bz-spacing-unit * 2);
+	$bz-spacing-unit--huge: round($bz-spacing-unit * 4);

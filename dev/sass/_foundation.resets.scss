@@ -1,0 +1,31 @@
+	
+	//
+	//	# _foundation.resets.scss
+	//
+	//	Low level framework resets on generic, unscoped, elements.
+	//
+	
+
+
+
+
+	/*
+	 *	## Body
+	 *
+	 *	Reset the body to prevent default values breaking style intentions.
+	 *
+	 *	1.	Set margin so content runs to edges
+	 *	2.	Define the body background as theme default (_settings.defaults)
+	 *	3.	Define the font stack to be used (_settings.defaults)
+	 *	4.	Define the font size to be used (_settings.defaults)
+	 *	5.	Define the text color to be used (_settings.defaults)
+	 *
+	 */
+
+	body {
+		margin: 0; /*[1]*/
+		background-color: $bz-body-bgc; /*[2]*/
+		font-family: $bz-font-stack; /*[3]*/
+		font-size: $bz-font-size; /*[4]*/
+		color: $bz-text-color; /*[5]*/
+	}

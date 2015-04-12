@@ -1,3 +1,6 @@
 /node_modules/
 /.sass-cache/
 styles/**/*.css
+*.cache
+/bower_components/
+/.build-cache/

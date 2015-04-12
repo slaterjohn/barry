@@ -20,13 +20,20 @@
   },
   "homepage": "https://github.com/slaterjohn/barry",
   "devDependencies": {
+    "bower": "^1.4.1",
     "del": "^1.1.1",
     "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-cleancss": "^0.2.2",
+    "gulp-concat-css": "^2.2.0",
+    "gulp-copy": "0.0.2",
+    "gulp-logger": "0.0.2",
     "gulp-minify-css": "^1.0.0",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.0",
     "gulp-rename": "^1.2.2",
-    "gulp-ruby-sass": "^1.0.1",
-    "gulp-sass": "^1.3.3"
+    "gulp-sass": "^1.3.3",
+    "normalize.css": "^3.0.3",
+    "run-sequence": "^1.0.2"
   }
 }

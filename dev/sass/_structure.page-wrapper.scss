@@ -1,0 +1,25 @@
+	
+	//
+	//	# _structure.page-wrapper.scss
+	//
+	//	Define the page wrapper structure element.
+	//
+	//
+	
+
+
+
+
+	/*
+	 *	## Wrapper
+	 *
+	 *	By default this wrapper will span the full width of the page.
+	 *
+	 *	1.	
+	 *
+	 */
+
+	.#{$bz-prefix}page-wrapper {
+		box-sizing: border-box;
+		width: 100%;
+	}

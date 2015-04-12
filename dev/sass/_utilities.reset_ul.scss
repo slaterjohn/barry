@@ -1,0 +1,46 @@
+	
+	//
+	//	# utilities.reset_ul.scss
+	//
+	//	Removes default paddings, margins and list-styles from <ul> elements.
+	//
+	
+
+
+
+
+	/*
+	 *	## Reset <ul>
+	 *
+	 *	Removes list-style, padding and margin from all ul's children
+	 *
+	 *	1.	Remove the default padding from ul
+	 *	2.	Remove the default margins from ul
+	 *
+	 */
+
+	.u-ul-reset {
+		padding: 0; /*[1]*/
+		margin: 0; /*[2]*/
+
+		// Reset nested <li>
+		li {
+			@extend .u-li-reset;
+		}
+	}
+
+
+
+
+	/*
+	 *	## Reset <li>
+	 *
+	 *	Removes list-style, padding and margin from all ul's children	
+	 *
+	 */
+
+	.u-li-reset {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}

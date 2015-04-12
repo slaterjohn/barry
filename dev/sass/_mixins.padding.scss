@@ -1,0 +1,38 @@
+	
+	//
+	//	# _mixins.padding.scss
+	//
+	//	This mixin will allow for you to use shorthand style padding
+	//	where values will be ignored if `-0` or null.
+	//
+
+	@mixin padding($pt, $pr, $pb, $pl){
+
+		// Padding Top
+		@if $pt != null {
+			@if $pt != -0 {
+				padding-top: $pt;
+			}
+		}
+
+		// Padding Right
+		@if $pr != null {
+			@if $pr != -0 {
+				padding-right: $pr;
+			}
+		}
+
+		// Padding Bottom
+		@if $pb != null {
+			@if $pb != -0 {
+				padding-bottom: $pb;
+			}
+		}
+
+		// Padding Left
+		@if $pl != null {
+			@if $pl != -0 {
+				padding-left: $pl;
+			}
+		}
+	}

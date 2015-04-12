@@ -1,3 +1,11 @@
+	/*!
+	 *
+	 *	Project Barry by @slaterjohn
+	 *
+	 *	http://github.com/slaterjohn/barry
+	 *
+	 */
+
 	//
 	//	    ___
 	//	  ,'   `.
@@ -29,6 +37,37 @@
 	// 
 	//
 
+	// barry.scss
+	// This file is used only to import all Project Barry elements.
+	// It should never be used for selectors.
 
 
-	 
+
+	// Settings
+	@import '_settings.defaults';
+	@import '_settings.options';
+
+
+	// Mixins
+	@import '_mixins.padding';
+
+
+	// Utilities
+	@import '_utilities.clearfix';
+	@import 'utilities.reset_ul';
+
+
+	// Foundation
+	@import '_foundation.resets';
+
+
+	// Structure
+	@import '_structure.grid';
+	@import '_structure.page-wrapper';
+	@import '_structure.page-inner';
+
+	
+	// Elements
+	@import '_elements.button';
+	@import '_elements.nav-bar';
+	@import '_elements.nav-menu';

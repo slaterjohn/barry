@@ -28,13 +28,19 @@
 	 *		Used in the clean up task.
 	 *
 	 */
-	var gulp = require('gulp'),
-		sass = require('gulp-sass'),
-		minify = require('gulp-minify-css'),
-		notify = require('gulp-notify'),
-		del = require('del'),
-		plumber = require('gulp-plumber'),
-		rename = require('gulp-rename');
+
+	var gulp          = require('gulp'),
+		sass          = require('gulp-sass'),
+		minify        = require('gulp-minify-css'),
+		notify        = require('gulp-notify'),
+		del           = require('del'),
+		plumber       = require('gulp-plumber'),
+		rename        = require('gulp-rename'),
+		runSequence   = require('run-sequence'),
+		logger        = require('gulp-logger'),
+		copy          = require('gulp-copy');
+		concatCss     = require('gulp-concat-css'),
+		autoprefixer  = require('gulp-autoprefixer');
 
 
 
@@ -45,6 +51,7 @@
 	 *	The files we will build with.
 	 *
 	 */
+
 	var buildPaths = {
 		scripts: [],
 		styles: ['./dev/sass/barry.scss']
@@ -59,6 +66,7 @@
 	 *	The folder we'll be monitoring in our watcher task.
 	 *
 	 */
+
 	var watchPaths = {
 		scripts: ['./dev/js/**/*.js'],
 		styles: ['./dev/sass/**/*.scss']
@@ -74,7 +82,44 @@
 	 *	The folder where everything will end up once we've parsed, minified and cleaned.
 	 *
 	 */
+
 	var distFolder = './barry/';
+	var distFilePaths = {
+		cssNormalFile: './barry/barry.css',
+		cssMnifiedFile: './barry/barry.min.css'
+	};
+
+
+
+
+
+	/*
+	 *	~ CSS Dependancies Folder
+	 *
+	 *	This folder is the location for all CSS thirdparty dependancies.
+	 *
+	 */
+
+	var cssDepDestFolder = './dev/sass/_thirdparty/';
+	var cssDepFiles = [];
+
+
+
+
+
+	/*
+	 *	~ Third Party CSS
+	 *
+	 *	This folder is the location for all CSS thirdparty.
+	 *
+	 */
+
+	var cssThirdpartyDest = './dev/sass/.build-cache/';
+	var cssThirdpartyDestFileName = '_thirdparty.css';
+	var cssThirdpartyDestFile = cssThirdpartyDest + cssThirdpartyDestFileName;
+	var cssThirdpartyFiles = [
+		'./bower_components/normalize.css/normalize.css'
+	];
 
 
 
@@ -87,9 +132,7 @@
 	 *
 	 */
 
-	gulp.task('default', ['clean', 'watch'], function(){
-		gulp.start('styles');
-	});
+	gulp.task('default', ['clean', 'watch', 'build-css']);
 
 
 
@@ -101,8 +144,9 @@
 	 *	Watch for changes on the sass folder and scripts folder.
 	 *
 	 */
+
 	gulp.task('watch', function(){
-		gulp.watch(watchPaths.styles, ['styles']);
+		gulp.watch(watchPaths.styles, ['build-css']);
 	});
 
 
@@ -110,30 +154,139 @@
 
 
 	/*
-	 *	~ Styles Task
-	 *	Ensure all sass is compiled to be production ready. This includes dropping development
-	 *	comments and saving a minified and unminified CSS version.
+	 *	~ Build CSS
 	 *
-	 *	1.	Compile SCSS to CSS
-	 *	2.	On any error send to error handler
-	 *	3.	Save it
-	 *	4.	Minify the CSS output
-	 *	5.	Rename to add .min.css to end
-	 *	6.	Save the minified version
-	 *	7.	Notify of success
+	 *	Run the build process
+	 *
+	 *	1.	Compile SASS
+	 *	2.	Clean CSS
+	 *	3.	Minify CSS
 	 *
 	 */
 
-	gulp.task('styles', function(){
+	gulp.task('build-css', function(callback){
+		return runSequence('css-deps', 'sass', 'css-concat', 'css-merge', 'css-normal', 'css-minify', callback);
+	});
+
+
+
+
+
+	/*
+	 *	~ Sass Task
+	 *
+	 *	Parse out all Sass to CSS file.
+	 *
+	 */
+
+	gulp.task('sass', function(){
 		return gulp.src(buildPaths.styles)
+		.pipe(logger({
+			before: '!!!!!!!!!!!!!!! STARTING SASS',
+			after: '!!!!!!!!!!!!!!! SASS DONE'
+		}))
 		.pipe( plumber() )
-		.pipe( sass() )
-		.on('error', handleError)
-		.pipe( gulp.dest(distFolder) )
+		.pipe( sass({ onError: handleError}) )
+		.pipe( plumber.stop() )
+		.pipe( gulp.dest(distFolder) );
+	});
+
+
+
+
+	/*
+	 *	~ CSS Dependancies
+	 *
+	 *	Copy all CSS dependancies to sass folder.
+	 *
+	 */
+
+	gulp.task('css-deps', function(){
+		return gulp.src(cssDepFiles, {base: './bower_components/'})
+		.pipe( gulp.dest(cssDepDestFolder) );
+	});
+
+
+
+
+	/*
+	 *	~ Concat Thirdparty
+	 *
+	 *	Concat all thirdparty CSS
+	 *
+	 */
+
+	gulp.task('css-concat', function(){
+		return gulp.src(cssThirdpartyFiles)
+		.pipe(concatCss(cssThirdpartyDestFileName))
+		.pipe( gulp.dest(cssThirdpartyDest) );
+	});
+
+
+
+
+	/*
+	 *	~ Merge Barry
+	 *
+	 *	Merge all thirdparty css with Barry
+	 *
+	 */
+
+	gulp.task('css-merge', function(){
+		return gulp.src([cssThirdpartyDestFile, distFilePaths.cssNormalFile])
+		.pipe(concatCss('barry.css'))
+		.pipe( gulp.dest(distFolder) );
+	});
+
+
+
+
+	/*
+	 *	~ Cleanup CSS
+	 *
+	 *	Remove anything we do not need from the CSS
+	 *
+	 */
+
+	gulp.task('css-normal', function(){
+		return gulp.src(distFilePaths.cssNormalFile)
+		.pipe(logger({
+			before: '!!!!!!!!!!!!!!! STARTING CSS CLEAN',
+			after: '!!!!!!!!!!!!!!! CSS CLEAN DONE'
+		}))
+		.pipe( plumber({
+			errorHandler: notify.onError("Error: <%= error.message %>")
+		}) )
+		.pipe( autoprefixer() )
+		.pipe( minify({ keepBreaks:true }) )
+		.pipe( plumber.stop() )
+		.pipe( gulp.dest(distFolder) );
+	});
+
+
+
+
+	/*
+	 *	~ Minify CSS
+	 *
+	 *	Shrink the CSS and remove the crap.
+	 *
+	 */
+
+	gulp.task('css-minify', function(){
+		return gulp.src(distFilePaths.cssNormalFile)
+		.pipe(logger({
+			before: '!!!!!!!!!!!!!!! STARTING CSS MINIFY',
+			after: '!!!!!!!!!!!!!!! CSS MINIFY DONE'
+		}))
+		.pipe( plumber({
+			errorHandler: notify.onError("Error: <%= error.message %>")
+		}) )
+		.pipe( minify({ keepSpecialComments:0 }) )
 		.pipe( rename({ extname: '.min.css' }) )
-		.pipe( minify() )
+		.pipe( plumber.stop() )
 		.pipe( gulp.dest(distFolder) )
-		.pipe( notify({ message: 'Sass Compiled' }) );
+		.pipe( notify({ message: 'Build Complete' }) );
 	});
 
 
@@ -158,6 +311,8 @@
 	 *	If an error happens notifiy us.
 	 *
 	 */
+
 	function handleError(err){
-		notify({ message: 'Sass Error' + err.message })
+		console.error(err);
+		return notify().write(err)
 	}

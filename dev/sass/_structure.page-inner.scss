@@ -1,0 +1,31 @@
+	
+	//
+	//	# _structure.page-inner.scss
+	//
+	//	The page inner is the element that is placed within full width element to fix the width.
+	//
+	
+
+
+
+
+	/*
+	 *	## Page Inner
+	 *
+	 *	By default this wrapper will be limited to 980px wide.
+	 *
+	 *	1.	Change the box model
+	 *	2.	Define the inner content width.
+	 *	3.	Add padding horizontally so content doesn't touch screen edges.
+	 *	4.	Content should be positioned to the middle of the screen.
+	 *
+	 */
+
+	.#{$bz-prefix}page-inner {
+		box-sizing: border-box; /*[1]*/
+		width: 980px; /*[2]*/
+		padding-left: 10px; /*[3]*/
+		padding-right: 10px; /*[3]*/
+		margin-left: auto; /*[4]*/
+		margin-right: auto; /*[4]*/
+	}

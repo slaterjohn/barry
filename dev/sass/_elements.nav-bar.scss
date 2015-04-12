@@ -1,0 +1,163 @@
+	
+	//
+	//	# _elements.nav-bar.scss
+	//
+	//	A navigation element that run horizontal across the page and contains
+	//	links, fields, logo, etc.
+	//
+	
+	$bz-nav-bar-bgc: #2C3E50 !default;
+	$bz-nav-bar-link-bgc: transparent !default;
+	$bz-nav-bar-link-bgc-hover: darken($bz-nav-bar-bgc, 5%) !default;
+	$bz-nav-bar-link-bgc-active: darken($bz-nav-bar-bgc, 10%) !default;
+
+	$bx-nav-link-color: $bz-on-dark-color !default;
+	$bx-nav-link-color-hover: darken($bx-nav-link-color, 5%) !default;
+	$bx-nav-link-color-active: darken($bx-nav-link-color, 5%) !default;
+
+
+
+
+	/*
+	 *	## Nav Bar Container
+	 *
+	 *	Spans all elements of the nav bar.
+	 *
+	 *	1.	
+	 *
+	 */
+
+	.#{$bz-prefix}nav-bar {
+		@extend .u-cf;
+		background-color: $bz-nav-bar-bgc;
+		line-height: 16px;
+		color: $bz-on-dark-color;
+		margin-bottom: $bz-spacing-unit;
+	}
+
+
+
+
+	/*
+	 *	## Nav Bar Before
+	 *
+	 *	Contains the content which will appear before the main
+	 *	body of the nav bar. This is typically a logo.
+	 *
+	 */
+
+	.#{$bz-prefix}nav-bar__before {
+		float: left;
+	}
+
+
+
+
+	/*
+	 *	## Nav Bar Content
+	 *
+	 *	Contains the main content of the nav bar.
+	 *
+	 */
+
+	.#{$bz-prefix}nav-bar__content {
+		float: left;
+	}
+
+
+
+
+	/*
+	 *	## Nav Bar After
+	 *
+	 *	Contains content that appears after the nav bar content
+	 *
+	 */
+
+	.#{$bz-prefix}nav-bar__after {
+		float: right;
+	}
+
+
+
+
+	/*
+	 *	## Nav Bar Links Container
+	 *
+	 *	The links for the nav bar.
+	 *
+	 *	1.	Extend the ul reset utility.
+	 *	2.	Float all nested <li> left so they run horizontally.
+	 *
+	 */
+
+	.#{$bz-prefix}nav-bar__links {
+		@extend .u-ul-reset; /*[1]*/
+		
+		// List Items
+		& > li {
+			float: left; /*[2]*/
+		}
+	}
+
+
+
+
+	/*
+	 *	## Nav Bar Link
+	 *
+	 *	Individual link within nav
+	 *
+	 *	1.	Ensure all nested links make use of all space for click target
+	 *	2.	Nav bar links look clickable and don't need an underline
+	 *	3.	Add a little breathing room to links.
+	 *
+	 */
+
+	.#{$bz-prefix}nav-bar a,
+	.#{$bz-prefix}nav-bar__link {
+		display: block; /*[1]*/
+		color: $bx-nav-link-color;
+		text-decoration: none; /*[2]*/
+		padding: $bz-spacing-unit; /*[3]*/
+		background-color: $bz-nav-bar-link-bgc;
+
+		&:hover {
+			background-color: $bz-nav-bar-link-bgc-hover;
+			color: $bx-nav-link-color-hover;
+		}
+	
+		&:focus,
+		&:active,
+		&.#{$bz-prefix}nav-bar__link--active {
+			background-color: $bz-nav-bar-link-bgc-active;
+			color: $bx-nav-link-color-active;
+		}
+	}
+
+
+
+
+	/*
+	 *	## Nav Bar Logo
+	 *
+	 *	Defines the logo area of the nav bar.
+	 *
+	 *	1.	Pull the logo left by the normal padding value.
+	 *
+	 */
+
+	.#{$bz-prefix}nav-bar__logo {
+		margin-left: - $bz-spacing-unit; /*[1]*/
+	}
+
+
+
+
+	/*
+	 *
+	 *	# Modifers
+	 *
+	 */
+
+
