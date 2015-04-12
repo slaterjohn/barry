@@ -1,1 +1,0 @@
-{"/Users/JohnSlater/GitHub/barry/gulpfile.js":{"sha1":"fc731090b9d2fbc2d6c9de866d424ffb4982b983","tasks":{"default":{"name":"default","dependencies":"clean watch"},"watch":{"name":"watch","dependencies":""},"styles":{"name":"styles","dependencies":""},"clean":{"name":"clean","dependencies":""}}}}
