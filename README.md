@@ -12,7 +12,7 @@ The Barry framework is still very much in production and it's not really ready f
 
 **John Slater**
 - <http://twitter.com/slaterjohn>
-- <http://github.com/slaterjohn>
+- <http://github.com/slaterjohn> 
 
 ## Licence
 Code released under the [MIT license](LICENSE.md).
