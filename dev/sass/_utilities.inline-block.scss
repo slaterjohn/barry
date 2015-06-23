@@ -1,0 +1,85 @@
+	
+	//
+	//	# utilities.inline-block.scss
+	//
+	//	Cross browser inline-block fix.
+	//
+	
+
+
+
+
+	/*
+	 *	## Inline Block (default)
+	 *
+	 *	Default inline block utility.
+	 *
+	 */
+
+	.u-ib {
+		display: -moz-inline-stack;
+		display: inline-block;
+		*display: inline;
+	}
+
+
+
+
+	/*
+	 *	## Inline Block Middle
+	 *
+	 *	Inline block utility with vertical align middle.
+	 *
+	 */
+
+	.u-ib-mid {
+		@extend .u-ib;
+		vertical-align: middle;
+	}
+
+
+
+
+	/*
+	 *	## Inline Block Top
+	 *
+	 *	Inline block utility with vertical align top.
+	 *
+	 */
+
+	.u-ib-top {
+		@extend .u-ib;
+		vertical-align: top;
+	}
+
+
+
+
+	/*
+	 *	## Inline Block Bottom
+	 *
+	 *	Inline block utility with vertical align bottom.
+	 *
+	 */
+
+	.u-ib-bottom,
+	.u-ib-bot {
+		@extend .u-ib;
+		vertical-align: bottom;
+	}
+
+
+
+
+	/*
+	 *	## Inline Block Baseline
+	 *
+	 *	Inline block utility with vertical align baseline.
+	 *
+	 */
+
+	.u-ib-baseline,
+	.u-ib-base {
+		@extend .u-ib;
+		vertical-align: baseline;
+	}

@@ -1,0 +1,37 @@
+	
+	//
+	//	# _mixins.media-queries.scss
+	//
+	//	This mixin is used to standardise the use of media queries throughout
+	//	barry.
+	//
+	//	1.	$device - This is passed to determine which device the media query
+	//		is for.
+	//
+
+	@mixin mq($device){
+		$mq-info: "only screen and (min-width: 1px)";
+
+		// Mobile Devices
+		@if $device == "phone" {
+			$mq-info: "only screen and (max-width: 500px)";
+		}
+
+		// Small Tablet Devices
+		@if $device == "tablet" or $device == "small-desktop" {
+			$mq-info: "only screen and (max-width: 960px)";
+		}
+
+		// Large Desktop (Responsive Up)
+		@if $device == "large-desktop" {
+			$mq-info: "only screen and (min-width: 960px)";
+		}
+
+
+		// Output media query
+		@media #{$mq-info} {
+			@content
+		}
+
+		
+	}

@@ -29,3 +29,51 @@
 		margin-left: auto; /*[4]*/
 		margin-right: auto; /*[4]*/
 	}
+
+
+
+
+	/*
+	 *
+	 *	# Media Queries
+	 *
+	 */
+
+
+
+
+	/*
+	 *	## Small Desktop
+	 *
+	 *	When below 980px wide on a supported desktop browser the wrapper should
+	 * 	become responsive.
+	 *
+	 */
+	@include mq("small-desktop"){
+
+		// Wrapper
+		.#{$bz-prefix}page-inner {
+			width: auto;
+		}
+
+	}
+
+
+
+
+	/*
+	 *	## Large Desktop
+	 *
+	 *	When above 980px wide  on a supported desktop browser the wrapper should
+	 *	become an automatic width but never big larger than 1300px.
+	 *
+	 */
+	@include mq("large-desktop"){
+
+		// Wrapper
+		.#{$bz-prefix}page-inner {
+			width: auto;
+			max-width: 1300px;
+		}
+
+	}

@@ -50,11 +50,13 @@
 
 	// Mixins
 	@import '_mixins.padding';
+	@import '_mixins.media-queries';
 
 
 	// Utilities
 	@import '_utilities.clearfix';
 	@import '_utilities.reset_ul';
+	@import '_utilities.inline-block';
 
 
 	// Foundation
@@ -71,6 +73,7 @@
 	@import '_elements.button';
 	@import '_elements.nav-bar';
 	@import '_elements.nav-menu';
+	@import '_elements.polaroid';
 
 
 	// Layout

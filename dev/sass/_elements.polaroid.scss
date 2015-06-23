@@ -1,0 +1,132 @@
+	
+	//
+	//	# _elements.polaroid.scss
+	//
+	//	An element for displaying an image with a description or associated
+	//	actions above or below.
+	//
+
+
+	$bz-polaroid-bgc: #ffffff !default;
+	$bz-polaroid-color: #666666 !default;
+	$bz-polaroid-border-color: #DADBDB !default;
+	$bz-polaroid-border-rgba: rgba(0,0,0,.1) !default;
+	$bz-polaroid-border-radius: 4px !default;
+	$bz-polaroid-font-size: $bz-font-size !default;
+
+
+
+
+	/*
+	 *	## Polaroid Container
+	 *
+	 *	The containing polaroid element.
+	 *
+	 *	1.	
+	 *
+	 */
+
+	.#{$bz-prefix}polaroid {
+		background-color: $bz-polaroid-bgc;
+		border: solid 1px $bz-polaroid-border-color;
+		border-color: $bz-polaroid-border-rgba;
+		border-radius: $bz-polaroid-border-radius;
+		font-size: $bz-font-size;
+		color: $bz-polaroid-color;
+		padding: $bz-spacing-unit;
+	}
+
+
+
+
+	/*
+	 *	## Polaroid Image
+	 *
+	 *	The containing polaroid element.
+	 *
+	 *	1.	Polaroids have a standard border radius.
+	 *	2.	
+	 *
+	 */
+
+	.#{$bz-prefix}polaroid__image {
+		border-radius: $bz-polaroid-border-radius; /*[1]*/
+		overflow: hidden;
+
+		// Nested Image
+		img {
+			max-width: 100%;
+			max-height: 100%;
+			height: auto;
+			widows: auto;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+
+
+
+
+	/*
+	 *	## Polaroid Details
+	 *
+	 *	The detail container
+	 *
+	 *	1.	When details is at the top a margin should be added to the
+	 *		bottom.
+	 *
+	 *	2.	When details is at the bottom a margin should be added to the top.
+	 *
+	 */
+
+	.#{$bz-prefix}polaroid__details {
+		&:first-child {margin-bottom: $bz-spacing-unit;} /*[1]*/
+		&:last-child {margin-top: $bz-spacing-unit;} /*[2]*/
+	}
+
+
+
+
+	/*
+	 *	## Main Detail
+	 *
+	 *	The element containg the main detail.
+	 *
+	 *	1.	
+	 *
+	 */
+
+	.#{$bz-prefix}polaroid__main-detail {
+		@extend .u-ib-mid;
+		width: 50%;
+	}
+
+
+
+
+	/*
+	 *	## Other Detail
+	 *
+	 *	The element containg the other/secondary detail.
+	 *
+	 *	1.	
+	 *
+	 */
+
+	.#{$bz-prefix}polaroid__other-detail {
+		@extend .u-ib-mid;
+		width: 50%;
+		text-align: right;
+		font-size: $bz-font-size--small;
+	}
+
+
+
+
+	/*
+	 *
+	 *	# Modifers
+	 *
+	 */
+
+

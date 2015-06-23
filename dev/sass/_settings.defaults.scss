@@ -35,8 +35,12 @@
 	//	Define the default text size unit. All other sizes are based on this.
 	//
 	$bz-font-stack: 'Arial', 'san-serif' !default;
-	$bz-font-size: 16px !default;
 	$bz-text-color: #111 !default;
+	$bz-font-size: 16px !default;
+	$bz-font-size--tiny: 10px !default;
+	$bz-font-size--small: 13px !default;
+	$bz-font-size--large: 20px !default;
+	$bz-font-size--huge: 26px !default;
 
 
 
@@ -47,7 +51,7 @@
 	//	Define the default units for spacing.
 	//
 	$bz-spacing-unit: 15px;
-	$bz-spacing-unit--tiny: round($bz-spacing-unit / 4);
-	$bz-spacing-unit--small: round($bz-spacing-unit / 2);
-	$bz-spacing-unit--large: round($bz-spacing-unit * 2);
-	$bz-spacing-unit--huge: round($bz-spacing-unit * 4);
+	$bz-spacing-unit--tiny: round($bz-spacing-unit / 4) !default;
+	$bz-spacing-unit--small: round($bz-spacing-unit / 2) !default;
+	$bz-spacing-unit--large: round($bz-spacing-unit * 2) !default;
+	$bz-spacing-unit--huge: round($bz-spacing-unit * 4) !default;

@@ -23,3 +23,18 @@
 		box-sizing: border-box;
 		width: 100%;
 	}
+
+
+
+
+	/*
+	 *
+	 *	# Media Queries
+	 *
+	 */
+	@include mq("mobile"){
+
+		// Wrapper
+		.#{$bz-prefix}page-wrapper {}
+
+	}
