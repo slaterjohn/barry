@@ -5,6 +5,74 @@
 	//	Generic and purpose specific button CSS
 	//
 
+	$bz-button-default-color: #666 !default;
+	$bz-button-default-bgc: #fff !default;
+	$bz-button-default-border: solid 1px rgba(0,0,0,.2) !default;
+	$bz-button-default-font-size: $bz-font-size !default;
+	$bz-button-default-font-family: $bz-font-stack !default;
+	
+
+
+
+
+	/*
+	 *	## Button
+	 *
+	 *	Button setup and default styling. A default button will be generic in
+	 *	in styling.
+	 *
+	 *	Default styling can always be overwritten using the settings file.
+	 *
+	 *	1.	Ensure the button is always a pointer.
+	 *
+	 */
+
 	.#{$bz-prefix}button {
-		color: red;
+		background-color: $bz-button-default-bgc;
+		border: $bz-button-default-border;
+		padding: $bz-spacing-unit;
+		border-radius: $bz-spacing-unit--tiny;
+		font-size: $bz-font-size;
+		font-family: $bz-font-stack;
+		color: $bz-button-default-color;
+		font-weight: 700;
+		cursor: pointer; /*[1]*/
+	}
+
+
+
+
+	/*
+	 *
+	 *	# Modifers
+	 *
+	 */
+
+
+
+
+	 /*
+	 *	## Button - Pill
+	 *
+	 *	A button pill is a button with all corners rounded to the maximum.
+	 *
+	 */
+
+	.#{$bz-prefix}button--pill {border-radius: 200px;}
+
+
+
+
+	/*
+	 *	## Button - Type: Positive
+	 *
+	 *	This button styling is to denote the desired action. Normally a positive
+	 *	action such as saving.
+	 *
+	 */
+
+	.#{$bz-prefix}button--positive {
+		background-color: $bz-positive-color;
+		color: $bz-positive-contrast-fallback-color;
+		color: $bz-positive-contrast-color;
 	}

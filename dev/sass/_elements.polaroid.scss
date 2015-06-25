@@ -88,45 +88,50 @@
 
 
 	/*
-	 *	## Main Detail
-	 *
-	 *	The element containg the main detail.
-	 *
-	 *	1.	
-	 *
-	 */
-
-	.#{$bz-prefix}polaroid__main-detail {
-		@extend .u-ib-mid;
-		width: 50%;
-	}
-
-
-
-
-	/*
-	 *	## Other Detail
-	 *
-	 *	The element containg the other/secondary detail.
-	 *
-	 *	1.	
-	 *
-	 */
-
-	.#{$bz-prefix}polaroid__other-detail {
-		@extend .u-ib-mid;
-		width: 50%;
-		text-align: right;
-		font-size: $bz-font-size--small;
-	}
-
-
-
-
-	/*
 	 *
 	 *	# Modifers
 	 *
 	 */
+
+
+
+
+	 /*
+	 *	## Polaroid Without Padding
+	 *
+	 *	Display the polaroid without an inner edge round the image.
+	 *
+	 *	1.	Add padding to the details.
+	 *	2.	Remove the bottom edge border radii and pull the image to the edges
+	 *		over the border.
+	 *
+	 */
+
+	.#{$bz-prefix}polaroid--no-edge {
+		padding: 0;
+
+		/*[1]*/
+		.#{$bz-prefix}polaroid__details {
+			@include padding(
+				null,
+				$bz-spacing-unit,
+				$bz-spacing-unit,
+				$bz-spacing-unit
+			);
+		}
+
+		/*[2]*/
+		.#{$bz-prefix}polaroid__image {
+			@include border-radius(
+				null,
+				null,
+				0,
+				0
+			);
+			margin-top: -1px;
+			margin-left: -1px;
+			margin-right: -1px;
+		}
+	}
 
 

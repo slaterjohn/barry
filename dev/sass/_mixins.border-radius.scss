@@ -1,0 +1,29 @@
+	
+	//
+	//	# _mixins.border-radius.scss
+	//
+	//	This mixin will output only the border-radius modifiers we need
+	//
+
+	@mixin border-radius($tl, $tr, $bl, $br){
+
+		// Border Radius Top Left
+		@if $tl != null {
+			border-top-left-radius: $tl;
+		}
+
+		// Border Radius Top Right
+		@if $tr != null {
+			border-top-right-radius: $tr;
+		}
+
+		// Border Radius Bottom Left
+		@if $bl != null {
+			border-bottom-left-radius: $bl;
+		}
+
+		// Border Radius Bottom Right
+		@if $br != null {
+			border-bottom-right-radius: $br;
+		}
+	}

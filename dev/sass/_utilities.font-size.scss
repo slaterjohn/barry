@@ -1,0 +1,67 @@
+	
+	//
+	//	# _utilities.font-size.scss
+	//
+	//	Utility to forcefully set a font-size based on units in the settings.
+	//
+	
+
+
+
+
+	/*
+	 *	## Normal Font Size
+	 *
+	 */
+
+	.u-fs {
+		font-size: $bz-font-size !important;
+	}
+
+
+
+
+	/*
+	 *	## Huge Font Size
+	 *
+	 */
+
+	.u-fs++ {
+		font-size: $bz-font-size--huge !important;
+	}
+
+
+
+
+	/*
+	 *	## Large Font Size
+	 *
+	 */
+
+	.u-fs+ {
+		font-size: $bz-font-size--large !important;
+	}
+
+
+
+
+	/*
+	 *	## Small Font Size
+	 *
+	 */
+
+	.u-fs- {
+		font-size: $bz-font-size--small !important;
+	}
+
+
+
+
+	/*
+	 *	## Tiny Font Size
+	 *
+	 */
+
+	.u-fs-- {
+		font-size: $bz-font-size--tiny !important;
+	}

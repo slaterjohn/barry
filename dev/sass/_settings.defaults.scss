@@ -26,6 +26,11 @@
 	$bz-on-dark-color: #fff !default;
 	$bz-on-light-color: #111 !default;
 
+	// Positive Colours
+	$bz-positive-color: #2ECC71 !default;
+	$bz-positive-contrast-fallback-color: #fff !default;
+	$bz-positive-contrast-color: rgba(255,255,255,.9) !default;
+
 
 
 
@@ -50,7 +55,7 @@
 	//
 	//	Define the default units for spacing.
 	//
-	$bz-spacing-unit: 15px;
+	$bz-spacing-unit: 16px;
 	$bz-spacing-unit--tiny: round($bz-spacing-unit / 4) !default;
 	$bz-spacing-unit--small: round($bz-spacing-unit / 2) !default;
 	$bz-spacing-unit--large: round($bz-spacing-unit * 2) !default;

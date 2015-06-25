@@ -1,0 +1,51 @@
+	
+	//
+	//	# _elements.hero-image.scss
+	//
+	//	An element for displaying an image with a description or associated
+	//	actions above or below.
+	//
+
+
+	$bz-hero-image-bgc: #efefef !default;
+	$bz-hero-image-color: #666666 !default;
+	$bz-hero-image-padding: $bz-spacing-unit * 4 !default;
+	$bz-polaroid-font-size: $bz-font-size !default;
+
+
+
+
+	/*
+	 *	## Hero Image
+	 *
+	 *	The containing polaroid element.
+	 *
+	 *	1.	
+	 *
+	 */
+
+	.#{$bz-prefix}hero-image {
+		margin-bottom: $bz-spacing-unit*2;
+		background-color: $bz-hero-image-bgc;
+		@include padding(
+			$bz-hero-image-padding,
+			null,
+			$bz-hero-image-padding,
+			null
+		);
+	}
+
+
+
+
+	/*
+	 *
+	 *	# Modifers
+	 *
+	 */
+
+
+
+
+
+

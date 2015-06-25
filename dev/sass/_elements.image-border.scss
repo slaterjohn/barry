@@ -1,0 +1,80 @@
+	
+	//
+	//	# _elements.image-border.scss
+	//
+	//	An element to wrap an image or element and apply a subtle border to the
+	//	edges.
+	//
+
+	$bz-image-border-light-color: rgba(255,255,255,.6) !default;
+	$bz-image-border-dark-color: rgba(0,0,0,.2) !default;
+
+
+
+
+	/*
+	 *	## Image Border
+	 *
+	 *	Wraps the image or element in a subtle border (dark by default) to
+	 *	define the edge without being too harsh.
+	 *
+	 */
+
+	.#{$bz-prefix}image-border {
+		@extend .ib;
+		position: relative;
+		
+		// Add border
+		&:before {
+			box-sizing: border-box;
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			border: solid 1px $bz-image-border-dark-color;
+			border-radius: inherit;
+		}
+
+	}
+
+
+
+
+
+	/*
+	 *
+	 *	# Modifers
+	 *
+	 */
+
+
+
+
+	/*
+	 *	## Image Border - Light
+	 *
+	 *	Makes the border lighter (used on dark images)
+	 *
+	 */
+
+	.#{$bz-prefix}image-border--light:before {
+		border: solid 1px $bz-image-border-light-color;
+	}
+
+
+
+
+	/*
+	 *	## Image Border - Dark
+	 *
+	 *	Makes the border darker (used on light images)
+	 *
+	 */
+
+	.#{$bz-prefix}image-border--dark:before {
+		border: solid 1px $bz-image-border-dark-color;
+	}
+
+

@@ -1,0 +1,48 @@
+	
+	//
+	//	# _utilities.vertical-align.scss
+	//
+	//	Utility to forcefully vertically align an element
+	//
+	
+
+
+
+
+	/*
+	 *	## Vertical Align Top
+	 *
+	 */
+
+	.u-va-t,
+	.u-va-top {
+		vertical-align: top !important;
+	}
+
+
+
+
+	/*
+	 *	## Vertical Align Middle
+	 *
+	 */
+
+	.u-va-m,
+	.u-va-mid,
+	.u-va-middle {
+		vertical-align: middle !important;
+	}
+
+
+
+
+	/*
+	 *	## Vertical Align Bottom
+	 *
+	 */
+
+	.u-va-b,
+	.u-va-bot,
+	.u-va-bottom {
+		vertical-align: bottom !important;
+	}

@@ -40,11 +40,11 @@
 		@extend .u-cf;
 		margin-left: - $bz-spacing-unit / 2;
 		margin-right: - $bz-spacing-unit / 2;
-		margin-top: $bz-spacing-unit / 2;
-		margin-bottom: $bz-spacing-unit / 2;
+		padding-top: $bz-spacing-unit / 2;
+		padding-bottom: $bz-spacing-unit / 2;
 
-		&:first-child {margin-top: 0;}
-		&:last-child {margin-bottom: 0;}
+		&:first-child {padding-top: 0;}
+		&:last-child {padding-bottom: 0;}
 	}
 
 
@@ -55,7 +55,7 @@
 	 *
 	 *	A single grid column. Each row can contain 12 column units.
 	 *
-	 *	1.	
+	 *	1.	Prevent empty columns from collapsing
 	 *
 	 */
 
@@ -66,6 +66,7 @@
 		box-sizing: border-box;
 		padding-left: $bz-spacing-unit / 2;
 		padding-right: $bz-spacing-unit / 2;
+		min-height: 1px; /*[1]*/
 	}
 
 
@@ -76,6 +77,22 @@
 	 *	# Modifers
 	 *
 	 */
+
+
+
+
+	/*
+	 *	## Inline Block Column
+	 *
+	 *	Set a column to span the width of multiple columns.
+	 *
+	 */
+
+	.#{$bz-prefix}grid-col--ib,
+	.#{$bz-prefix}grid-column--ib {
+		float: none;
+		@extend .u-ib;
+	}
 
 
 
