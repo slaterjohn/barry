@@ -52,6 +52,7 @@
 	@import '_mixins.padding';
 	@import '_mixins.media-queries';
 	@import '_mixins.border-radius';
+	@import '_mixins.opacity';
 
 
 	// Utilities
@@ -61,10 +62,14 @@
 	@import '_utilities.text-align';
 	@import '_utilities.vertical-align';
 	@import '_utilities.font-size';
+	@import '_utilities.vaf';
+	@import '_utilities.responsive';
 
 
 	// Foundation
 	@import '_foundation.resets';
+	@import '_foundation.header';
+	@import '_foundation.anchors';
 
 
 	// Structure

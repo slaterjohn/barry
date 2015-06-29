@@ -43,6 +43,24 @@
 
 
 	/*
+	 *	## Mobile
+	 *
+	 *	When at mobile device size make it fluid width.
+	 *
+	 */
+	@include mq("mobile"){
+
+		// Wrapper
+		.#{$bz-prefix}page-inner {
+			width: auto;
+		}
+
+	}
+
+
+
+
+	/*
 	 *	## Small Desktop
 	 *
 	 *	When below 980px wide on a supported desktop browser the wrapper should
@@ -53,7 +71,7 @@
 
 		// Wrapper
 		.#{$bz-prefix}page-inner {
-			width: auto;
+			width: 980px;
 		}
 
 	}

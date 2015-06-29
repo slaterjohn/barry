@@ -67,6 +67,28 @@
 		padding-left: $bz-spacing-unit / 2;
 		padding-right: $bz-spacing-unit / 2;
 		min-height: 1px; /*[1]*/
+
+		/*
+		 *
+		 *	### Responsive
+		 *
+		 *	When on a mobile device the columns stack, we should add padding
+		 *	to prevent edges touching.
+		 *
+		 *	1.	When a colum is the first within the row, we don't need
+		 *		padding-top because it'll double up.
+		 *
+		 *	2.	When a colum is the last within the row, we don't need
+		 *		padding-bottom because it'll double up.
+		 *
+		 */
+		@include mq("mobile"){
+			padding-top: $bz-spacing-unit / 2;
+			padding-bottom: $bz-spacing-unit / 2;
+
+			&:first-child {padding-top: 0;} /*[1]*/
+			&:last-child {padding-bottom: 0;} /*[2]*/
+		}
 	}
 
 
@@ -112,6 +134,16 @@
 		.#{$bz-prefix}grid-col--span-#{$i},
 		.#{$bz-prefix}grid-column--span-#{$i} {
 			width: $bz-grid-column-width * $i; /*[1]*/
+
+			/*
+			 *
+			 *	### Responsive
+			 *
+			 */
+			@include mq("mobile"){
+				width: 100%;
+			}
+
 		}
 	}
 

@@ -1,0 +1,66 @@
+	
+	//
+	//	# utilities.responsive.scss
+	//
+	//	These responsive utlities allow you to display or hide specific elements
+	//	based on the device you're on. Useful for hiding large elements for
+	//	mobile users.
+	//
+	
+
+
+
+
+	/*
+	 *	## Mobile Only
+	 *
+	 *	Only display an element on mobile devices.
+	 *
+	 */
+
+	.u-visible-mobile,
+	.u-visible-m {
+		display: none;
+
+		@include mq("mobile"){
+			display: block !important;
+		}
+	}
+
+
+
+
+	/*
+	 *	## Small Desktop Only
+	 *
+	 *	Only display an element on small desktops
+	 *
+	 */
+
+	.u-visible-small-desktop,
+	.u-visible-sd {
+		display: none;
+
+		@include mq("small-desktop"){
+			display: block !important;
+		}
+	}
+
+
+
+
+	/*
+	 *	## Large Desktop Only
+	 *
+	 *	Only display an element on small desktops
+	 *
+	 */
+
+	.u-visible-large-desktop,
+	.u-visible-ld {
+		display: none;
+
+		@include mq("large-desktop"){
+			display: block !important;
+		}
+	}

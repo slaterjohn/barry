@@ -1,0 +1,57 @@
+	
+	//
+	//	# _foundation.anchors.scss
+	//
+	//	Standard styling for links.
+	//
+	
+
+
+
+
+	/*
+	 *	## Link
+	 *
+	 */
+
+	a {
+		color: $bz-link-color;
+		text-decoration: none;
+	}
+
+
+
+
+	/*
+	 *	## Link:Hover
+	 *
+	 */
+
+	a:hover {
+		text-decoration: underline;
+		color: $bz-link-hover-color;
+	}
+
+
+
+
+	/*
+	 *	## Link:Active
+	 *
+	 */
+
+	a:active {
+		text-decoration: underline;
+	}
+
+
+
+
+	/*
+	 *	## Link:Visited
+	 *
+	 */
+
+	a:visited {
+		color: $bz-link-visited-color;
+	}

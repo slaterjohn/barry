@@ -1,0 +1,37 @@
+	
+	//
+	//	# utilities.vaf.scss
+	//
+	//	Vaf (vertical align fix) allows you to vertically elements within the
+	//	height of the container.
+	//
+	
+
+
+
+
+	/*
+	 *	## Vertical Align Fix
+	 *
+	 *	Removes list-style, padding and margin from all ul's children
+	 *
+	 *	1.	Prevents the :before element from becoming an issue within the rest
+	 *		of the page.
+	 *	2.	Add the :before element with large height and vertical alignment.
+	 *	3.	Pull the element outside the bounds of the container (prevents
+	 *		issues being caused by the extra 1px)
+	 *
+	 */
+
+	.u-vaf {
+		overflow: hidden; /*[1]*/
+
+		&:before { /*[2]*/
+			@extend .u-ib-mid;
+			content: "";
+			height: 100%;
+			width: 1px;
+			margin-left: -1px; /*[3]*/
+			visibility: hidden;
+		}
+	}

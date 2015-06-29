@@ -26,6 +26,11 @@
 	$bz-on-dark-color: #fff !default;
 	$bz-on-light-color: #111 !default;
 
+	// Link Color
+	$bz-link-color: #3498DB !default;
+	$bz-link-hover-color: #2980B9 !default;
+	$bz-link-visited-color: #71B6E5 !default;
+
 	// Positive Colours
 	$bz-positive-color: #2ECC71 !default;
 	$bz-positive-contrast-fallback-color: #fff !default;
@@ -40,12 +45,27 @@
 	//	Define the default text size unit. All other sizes are based on this.
 	//
 	$bz-font-stack: 'Arial', 'san-serif' !default;
-	$bz-text-color: #111 !default;
+	$bz-text-color: #3f3f3f !default;
 	$bz-font-size: 16px !default;
 	$bz-font-size--tiny: 10px !default;
 	$bz-font-size--small: 13px !default;
 	$bz-font-size--large: 20px !default;
 	$bz-font-size--huge: 26px !default;
+
+
+
+
+	//
+	//	## Headings
+	//
+	//	Define the default text size unit. All other sizes are based on this.
+	//
+	$bz-heading-font-size--h1: 36px !default;
+	$bz-heading-font-size--h2: 30px !default;
+	$bz-heading-font-size--h3: 24px !default;
+	$bz-heading-font-size--h4: 20px !default;
+	$bz-heading-font-size--h5: 16px !default;
+	$bz-heading-font-size--h6: 14px !default;
 
 
 

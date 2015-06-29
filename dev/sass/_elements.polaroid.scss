@@ -8,7 +8,6 @@
 
 
 	$bz-polaroid-bgc: #ffffff !default;
-	$bz-polaroid-color: #666666 !default;
 	$bz-polaroid-border-color: #DADBDB !default;
 	$bz-polaroid-border-rgba: rgba(0,0,0,.1) !default;
 	$bz-polaroid-border-radius: 4px !default;
@@ -32,7 +31,6 @@
 		border-color: $bz-polaroid-border-rgba;
 		border-radius: $bz-polaroid-border-radius;
 		font-size: $bz-font-size;
-		color: $bz-polaroid-color;
 		padding: $bz-spacing-unit;
 	}
 
