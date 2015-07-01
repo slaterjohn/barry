@@ -54,7 +54,8 @@
 
 	var buildPaths = {
 		scripts: [],
-		styles: ['./dev/sass/barry.scss']
+		styles: ['./dev/sass/barry.scss'],
+		fonts: []
 	};
 
 
@@ -124,6 +125,22 @@
 
 
 
+	/*
+	 *	~ Resources
+	 *
+	 *	These are folders in 'dev' that contain resources we need to copy to
+	 *	production.
+	 *
+	 */
+
+	var requiredResourcesDestination = './barry/resources';
+	var requiredResourcesFiles = [
+		'./dev/resources/**/*'
+	];
+
+
+
+
 
 	/*
 	 *	~ Default
@@ -165,7 +182,7 @@
 	 */
 
 	gulp.task('build-css', function(callback){
-		return runSequence('css-deps', 'sass', 'css-concat', 'css-merge', 'css-normal', 'css-minify', callback);
+		return runSequence('css-deps', 'sass', 'css-concat', 'css-merge', 'css-normal', 'css-minify', 'copy-resources', callback);
 	});
 
 
@@ -218,7 +235,7 @@
 
 	gulp.task('css-concat', function(){
 		return gulp.src(cssThirdpartyFiles)
-		.pipe(concatCss(cssThirdpartyDestFileName))
+		.pipe(concatCss(cssThirdpartyDestFileName, {rebaseUrls:false}))
 		.pipe( gulp.dest(cssThirdpartyDest) );
 	});
 
@@ -234,7 +251,7 @@
 
 	gulp.task('css-merge', function(){
 		return gulp.src([cssThirdpartyDestFile, distFilePaths.cssNormalFile])
-		.pipe(concatCss('barry.css'))
+		.pipe(concatCss('barry.css', {rebaseUrls:false}))
 		.pipe( gulp.dest(distFolder) );
 	});
 
@@ -287,6 +304,21 @@
 		.pipe( plumber.stop() )
 		.pipe( gulp.dest(distFolder) )
 		.pipe( notify({ message: 'Build Complete' }) );
+	});
+
+
+
+
+	/*
+	 *	~ Required Resources
+	 *
+	 *	Copy all required resources to production folder
+	 *
+	 */
+
+	gulp.task('copy-resources', function(){
+		return gulp.src(requiredResourcesFiles)
+		.pipe( gulp.dest(requiredResourcesDestination) );
 	});
 
 

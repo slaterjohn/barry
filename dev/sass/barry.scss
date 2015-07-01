@@ -46,6 +46,7 @@
 	// Settings
 	@import '_settings.defaults';
 	@import '_settings.options';
+	@import '_settings.thirdparty';
 
 
 	// Mixins
@@ -70,6 +71,10 @@
 	@import '_foundation.resets';
 	@import '_foundation.header';
 	@import '_foundation.anchors';
+
+
+	// Thirdparty
+	@import '_thirdparty/font-awesome/font-awesome';
 
 
 	// Structure
