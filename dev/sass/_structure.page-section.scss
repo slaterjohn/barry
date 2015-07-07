@@ -1,0 +1,62 @@
+	
+	//
+	//	# _structure.page-section.scss
+	//
+	//	Wraps a section on a page
+	//
+
+
+	$bz-page-section-bgc: #efefef !default;
+	$bz-page-section-color: #666666 !default;
+
+
+
+
+
+	/*
+	 *	## Page Section
+	 *
+	 *	A page section
+	 *
+	 *	1.	
+	 *
+	 */
+
+	.#{$bz-prefix}page-section {
+		@include padding(
+			$bz-spacing-unit,
+			null,
+			$bz-spacing-unit,
+			null
+		);
+	}
+
+
+
+
+	/*
+	 *
+	 *	# Modifers
+	 *
+	 */
+
+
+
+
+
+	/*
+	 *	## Page Section Odd
+	 *
+	 *	Make the background of the section dark.
+	 *
+	 */
+
+	.#{$bz-prefix}page-section--dark {
+		background-color: $bz-page-section-bgc;
+	}
+
+
+
+
+
+

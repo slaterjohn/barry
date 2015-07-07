@@ -1,0 +1,38 @@
+	
+	//
+	//	# _mixins.margin.scss
+	//
+	//	This mixin will allow for you to use shorthand style margin
+	//	where values will be ignored if `-0` or null.
+	//
+
+	@mixin margin($mt, $mr, $mb, $ml){
+
+		// Padding Top
+		@if $mt != null {
+			@if $mt != -0 {
+				margin-top: $mt;
+			}
+		}
+
+		// Padding Right
+		@if $mr != null {
+			@if $mr != -0 {
+				margin-right: $mr;
+			}
+		}
+
+		// Padding Bottom
+		@if $mb != null {
+			@if $mb != -0 {
+				margin-bottom: $mb;
+			}
+		}
+
+		// Padding Left
+		@if $ml != null {
+			@if $ml != -0 {
+				margin-left: $ml;
+			}
+		}
+	}

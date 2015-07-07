@@ -25,7 +25,6 @@
 	 */
 
 	.#{$bz-prefix}hero-image {
-		margin-bottom: $bz-spacing-unit*2;
 		background-color: $bz-hero-image-bgc;
 		@include padding(
 			$bz-hero-image-padding,
@@ -43,6 +42,7 @@
 	 *	# Modifers
 	 *
 	 */
+
 
 
 

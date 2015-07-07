@@ -1,0 +1,71 @@
+	
+	//
+	//	# _elements.icons.scss
+	//
+	//	Display FontAwesome icons within a site.
+	//
+	
+	// Import Font Awesome
+	@import '_thirdparty/font-awesome/font-awesome';
+
+
+	$bz-icon-spacing: $bz-spacing-unit--small !default;
+
+
+
+
+	/*
+	 *	## Icon
+	 *
+	 *	An icon element
+	 *
+	 *	1.	
+	 *
+	 */
+
+	.#{$bz-prefix}icon {
+		
+	}
+
+
+
+
+	/*
+	 *
+	 *	# Modifers
+	 *
+	 */
+
+
+
+
+	/*
+	 *	## Left Icon
+	 *
+	 *	If an element is displayed to the left add spacing	
+	 *
+	 */
+
+	.#{$bz-prefix}icon--left {
+		margin-right: $bz-icon-spacing;
+	}
+
+
+
+
+	/*
+	 *	## Right Icon
+	 *
+	 *	If an element is displayed to the right add spacing	
+	 *
+	 */
+
+	.#{$bz-prefix}icon--right {
+		margin-left: $bz-icon-spacing;
+	}
+
+
+
+
+
+
