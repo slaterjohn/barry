@@ -1,0 +1,29 @@
+	
+	//
+	//	# _settings.options.scss
+	//
+	//	Enable or disable parts parts of the barry framework. These settings are
+	//	used elsewhere so never remove them.
+	//
+
+
+	//
+	//	Enable Features
+	//
+	//	Enable or disable barry framework features. Changing a value to false
+	//	will remove it from your build.
+	//
+	$bz-options-structure: true !default;
+		$bz-options-structure__grid: true !default;
+		$bz-options-structure__page-wrapper: true !default;
+		$bz-options-structure__page-inner: true !default;
+		$bz-options-structure__page-section: true !default;
+
+	$bz-options-elements: true !default;
+		$bz-options-elements__image-border: true !default;
+		$bz-options-elements__button: true !default;
+		$bz-options-elements__nav-bar: true !default;
+		$bz-options-elements__nav-menu: true !default;
+		$bz-options-elements__polaroid: true !default;
+		$bz-options-elements__hero-image: true !default;
+		$bz-options-elements__icons: true !default;

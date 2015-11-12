@@ -235,6 +235,8 @@ a:visited{color:#71B6E5}
 .baz-button:hover{opacity:.8;filter:alpha(opacity=80)}
 .baz-button--pill{border-radius:200px}
 .baz-button--positive{background-color:#2ECC71;color:#fff;color:rgba(255,255,255,.9)}
+.baz-button--tiny{font-size:10px;padding:4px}
+.baz-button--small{font-size:13px;padding:8px}
 .baz-button--large{font-size:20px}
 .baz-button--huge{font-size:26px}
 .baz-nav-bar{background-color:#2C3E50;line-height:16px;color:#fff}

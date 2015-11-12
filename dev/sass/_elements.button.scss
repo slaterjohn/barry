@@ -11,6 +11,8 @@
 	$bz-button-font-size: $bz-font-size !default;
 	$bz-button-font-family: $bz-font-stack !default;
 
+	$bz-button-tiny-font-size: $bz-font-size--tiny !default;
+	$bz-button-small-font-size: $bz-font-size--small !default;
 	$bz-button-large-font-size: $bz-font-size--large !default;
 	$bz-button-huge-font-size: $bz-font-size--huge !default;
 	
@@ -83,6 +85,36 @@
 		background-color: $bz-positive-color;
 		color: $bz-positive-contrast-fallback-color;
 		color: $bz-positive-contrast-color;
+	}
+
+
+
+
+	/*
+	 *	## Button - Size: Tiny
+	 *
+	 *	Displays a tiny button
+	 *
+	 */
+
+	.#{$bz-prefix}button--tiny {
+		font-size: $bz-button-tiny-font-size;
+		padding: $bz-spacing-unit--tiny;
+	}
+
+
+
+
+	/*
+	 *	## Button - Size: Small
+	 *
+	 *	Displays a small button
+	 *
+	 */
+
+	.#{$bz-prefix}button--small {
+		font-size: $bz-button-small-font-size;
+		padding: $bz-spacing-unit--small;
 	}
 
 

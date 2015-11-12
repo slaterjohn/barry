@@ -77,24 +77,83 @@
 
 
 	// Thirdparty
+	// None, yet
+
+
+	//
+	//	* Import Structure Components
+	//
+	//	Structure components are invisible elements that provide structure to
+	//	pages. This includes grids, wrappers and sections.
+	//
+	@if $bz-options-structure {
+
+		// Grid
+		@if $bz-options-structure__grid {
+			@import '_structure.grid';
+		}
+
+		// Page Wrapper
+		@if $bz-options-structure__page-wrapper {
+			@import '_structure.page-wrapper';
+		}
+
+		// Page Inner
+		@if $bz-options-structure__page-inner {
+			@import '_structure.page-inner';
+		}
+
+		// Page Section
+		@if $bz-options-structure__page-section {
+			@import '_structure.page-section';
+		}
+	}
+
 	
 
-
-	// Structure
-	@import '_structure.grid';
-	@import '_structure.page-wrapper';
-	@import '_structure.page-inner';
-	@import '_structure.page-section';
-
 	
-	// Elements
-	@import '_elements.image-border';
-	@import '_elements.button';
-	@import '_elements.nav-bar';
-	@import '_elements.nav-menu';
-	@import '_elements.polaroid';
-	@import '_elements.hero-image';
-	@import '_elements.icons';
+	//
+	//	* Import Elements
+	//
+	//	Include things like buttons, icons, etc
+	//
+	@if $bz-options-elements {
+
+		// Image Border
+		@if $bz-options-elements__image-border {
+			@import '_elements.image-border';
+		}
+
+		// Buttons
+		@if $bz-options-elements__button {
+			@import '_elements.button';
+		}
+
+		// Nav Bar
+		@if $bz-options-elements__nav-bar {
+			@import '_elements.nav-bar';
+		}
+
+		// Nav Menu
+		@if $bz-options-elements__nav-menu {
+			@import '_elements.nav-menu';
+		}
+
+		// Polaroid
+		@if $bz-options-elements__polaroid {
+			@import '_elements.polaroid';
+		}
+
+		// Hero Image
+		@if $bz-options-elements__hero-image {
+			@import '_elements.hero-image';
+		}
+
+		// Icons
+		@if $bz-options-elements__icons {
+			@import '_elements.icons';
+		}
+	}
 
 
 	// Layout
