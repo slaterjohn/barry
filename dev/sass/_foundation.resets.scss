@@ -1,10 +1,10 @@
-	
+
 	//
 	//	# _foundation.resets.scss
 	//
 	//	Low level framework resets on generic, unscoped, elements.
 	//
-	
+
 
 
 
@@ -28,4 +28,22 @@
 		font-family: $bz-font-stack; /*[3]*/
 		font-size: $bz-font-size; /*[4]*/
 		color: $bz-text-color; /*[5]*/
+	}
+
+
+
+
+	/*
+	 *	## Paragraphs
+	 *
+	 *	Default settings for paragraphs
+	 *
+	 */
+
+	p {
+		margin-top: 0;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}

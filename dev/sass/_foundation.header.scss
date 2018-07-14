@@ -1,10 +1,30 @@
-	
+
 	//
 	//	# _foundation.header.scss
 	//
 	//	Standard element level styling for <h1>, <h2>, <h3> etc tags.
 	//
-	
+
+
+
+
+	/*
+	 *	## Headings
+	 *
+	 *	General heading CSS
+	 *
+	 */
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin: 0;
+		font-weight: 700;
+	}
+
 
 
 
@@ -12,11 +32,23 @@
 	/*
 	 *	## Heading 1
 	 *
-	 *	Button setup and default styling. A default button will be generic in
-	 *	in styling.
+	 *	Main heading styling
 	 *
 	 */
 
 	h1 {
 		font-size: $bz-heading-font-size--h1;
+	}
+
+
+
+	/*
+	 *	## Heading 2
+	 *
+	 *	Sub heading styling
+	 *
+	 */
+
+	h2 {
+		font-size: $bz-heading-font-size--h2;
 	}

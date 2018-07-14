@@ -1,4 +1,4 @@
-	
+
 	//
 	//	# _elements.button.scss
 	//
@@ -15,7 +15,7 @@
 	$bz-button-small-font-size: $bz-font-size--small !default;
 	$bz-button-large-font-size: $bz-font-size--large !default;
 	$bz-button-huge-font-size: $bz-font-size--huge !default;
-	
+
 
 
 
@@ -42,10 +42,13 @@
 		color: $bz-button-color;
 		font-weight: 700;
 		cursor: pointer; /*[1]*/
+		text-decoration: none;
 
 		// Hover
 		&:hover {
 			@include opacity(.8);
+			text-decoration: none;
+			color: $bz-button-color;
 		}
 	}
 
@@ -85,6 +88,12 @@
 		background-color: $bz-positive-color;
 		color: $bz-positive-contrast-fallback-color;
 		color: $bz-positive-contrast-color;
+
+		// Hover
+		&:hover {
+			color: $bz-positive-contrast-fallback-color;
+			color: $bz-positive-contrast-color;
+		}
 	}
 
 
